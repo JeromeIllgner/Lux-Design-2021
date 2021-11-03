@@ -51,6 +51,24 @@ class Agent:
         city_tiles = []
         for row in self.game.map.map:
             for cell in row:
-                if cell.city_tile and cell.city_tile.team == self.game.id:
+                if cell.city_tile and cell.city_tile.team == self.player.team:
                     city_tiles.append(cell.pos)
         return city_tiles
+
+
+def test_func():
+    return 0
+
+# Kaggle function
+def agent(observation, configuration):
+    if not hasattr(agent, "instance"):
+        agent.instance = Agent(observation["updates"])
+    else:
+        agent.instance.game.update(observation["updates"])
+    instance = agent.instance
+    (player_index, opponent_index) = (0, 1) if observation["player"] == 0 else (1, 0)
+    instance.player = instance.game.players[player_index]
+    instance.opponent = instance.game.players[opponent_index]
+    actions = agent.instance.get_actions()
+    print(f"step {observation['step']}: {actions=}", file=sys.stderr)
+    return actions
