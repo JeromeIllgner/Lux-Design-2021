@@ -66,5 +66,4 @@ def agent(observation, configuration):
     instance.player = instance.game.players[player_index]
     instance.opponent = instance.game.players[opponent_index]
     actions = agent.instance.get_actions()
-    print(f"step {observation['step']}: {actions=}", file=sys.stderr)
     return actions
