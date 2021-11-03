@@ -55,10 +55,6 @@ class Agent:
                     city_tiles.append(cell.pos)
         return city_tiles
 
-
-def test_func():
-    return 0
-
 # Kaggle function
 def agent(observation, configuration):
     if not hasattr(agent, "instance"):
