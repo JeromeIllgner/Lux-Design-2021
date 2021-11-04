@@ -1,5 +1,3 @@
-import sys
-
 from lux.game import Game
 from lux.game_map import Cell, RESOURCE_TYPES
 
@@ -54,6 +52,7 @@ class Agent:
                 if cell.city_tile and cell.city_tile.team == self.player.team:
                     city_tiles.append(cell.pos)
         return city_tiles
+
 
 # Kaggle function
 def agent(observation, configuration):

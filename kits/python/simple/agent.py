@@ -67,6 +67,7 @@ def get_nearest_city(unit, cities):
                 nearest_city_tile = city_tile
     return nearest_city_tile
 
+
 def agent(observation, configuration):
     global game_state
     setup_game(observation)
